@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* Colors */
+  --gray-color: rgb(240, 238, 237);
+  --gray-color-2: #333;
+  --gray-color-3: #aaa;
+  --white-color: rgb(255, 255, 255);
+  --photo-color: #f2f0f1;
+  --red-color-100: rgb(255, 51, 51);
+  --red-color-10: rgb(255, 51, 51, 0.1);
+  --red-color-hover: rgb(224, 117, 117);
+  --red-color-2: rgb(219, 68, 68);
+  --black-color-100: rgb(0, 0, 0);
+  --black-color-10: rgb(0, 0, 0, 0.1);
+  --black-color-40: rgb(0, 0, 0, 0.4);
+  --black-color-60: rgb(0, 0, 0, 0.6);
+  --yellow-color: rgb(255, 198, 51);
+  --yellow-color-10: rgb(255, 198, 51, 0.1);
+  --green-color-100: rgb(1, 171, 49);
+  --green-color-60: rgb(1, 171, 49, 0.6);
+  --blue-color: #299fff;
+  --blue-color-2: #008dda;
+  --light-blue-color: #e6f0ff;
+
+  /* Fonts */
+  --font-satoshi: "Satoshi", sans-serif;
+
+  /* container */
+  --container-width-lg: 80%;
+  --container-width-md: 85%;
+  --container-width-sm: 90%;
+  --container-margin: 0 auto;
+
+  /* box shadow */
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  /* transition */
+  --transition: all 0.3s ease;
+
+  /* border radius */
+  --border-radius: 0.5rem;
+  --border-radius-2: 0.25rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-satoshi);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* a {
+  text-decoration: none;
+  color: var(--black-color-100);
+} */
+
+/* Shared */
+
+/* start title */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  /* margin-bottom: 20px; */
+}
+
+/* .title::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 100%;
+  background-color: var(--light-blue-color);
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+} */
+/* end title */
+
+/* add-btn  */
+.add-btn {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-2);
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-border-radius: var(--border-radius-2);
+  -moz-border-radius: var(--border-radius-2);
+  -ms-border-radius: var(--border-radius-2);
+  -o-border-radius: var(--border-radius-2);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  margin: 10px 0;
+
+  /* font-size: 1.5rem; */
+}
+
+.add-btn:hover {
+  background-color: var(--blue-color-2);
+}
+/* add-btn */
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

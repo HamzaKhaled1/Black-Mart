@@ -1,0 +1,114 @@
+.formContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.formTitle {
+  width: fit-content;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--gray-color-3);
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.formTitle::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--gray-color-3);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.inputContainer {
+  margin-bottom: 10px;
+}
+
+.inputField {
+  color: var(--gray-color-2);
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  padding: 0.5rem;
+  position: relative;
+  margin: 10px auto 0;
+  transition: var(--transition);
+  background-color: var(--gray-color);
+}
+
+.inputField input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--gray-color-3);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.inputField:has(input:focus) input {
+  color: var(--gray-color-2);
+}
+
+.inputField .icon {
+  font-size: 1.5rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-color-3);
+}
+
+.inputField:has(input:focus) .icon {
+  color: var(--yellow-color);
+}
+
+.error {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--red-color-100);
+}
+
+.previewImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.previewImage img {
+  width: 300px;
+  object-fit: contain;
+}
+
+.imageIcon {
+  font-size: 100px;
+  color: var(--gray-color-3);
+}
+
+.fileInput {
+  display: none;
+}
+
+.customUpload {
+  cursor: pointer;
+}
+
+.selectInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--gray-color-3);
+  font-weight: bold;
+}

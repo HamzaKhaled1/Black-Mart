@@ -1,0 +1,42 @@
+.UnAuthorized {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.UnAuthorizedImg {
+  width: 500px;
+}
+
+.UnAuthorizedTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gray-color-2);
+}
+
+.UnAuthorizedText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-color-2);
+}
+
+.UnAuthorizedBtn {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  margin-bottom: 50px;
+}
+
+.UnAuthorizedBtn:hover {
+  background-color: var(--blue-color-2);
+}

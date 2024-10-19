@@ -1,0 +1,43 @@
+.InfoCard{
+    width: 24%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+    cursor: pointer;
+}
+
+.InfoCard:hover{
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    box-shadow: var(--box-shadow-2);
+}
+
+.InfoCard .data{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 0.3rem;
+}
+
+.InfoCard .data .icon {
+    font-size: 2rem;
+}
+
+.InfoCard .data .name{
+    color: var(--gray-color-3);
+    font-weight: lighter;
+}
+
+.InfoCard .number{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: right;
+}

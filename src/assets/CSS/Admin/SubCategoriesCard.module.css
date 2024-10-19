@@ -1,0 +1,107 @@
+.subCategoryCard {
+  width: 100%;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.subCategoryCard:hover {
+  transform: scale(1.01);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
+}
+
+.subCategoryCard:hover .subCategoryName {
+  color: var(--gray-color-2);
+}
+
+.subCategoryImg {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.subCategoryCard a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .subCategoryCard {
+    width: 30%;
+  }
+}
+
+.subCategoryName {
+  color: var(--gray-color-3);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+.subCategoryBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.subCategoryBtns a,
+.subCategoryBtns button {
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  border: none;
+  outline: none;
+  width: 45% !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+
+.editBtn {
+  background-color: var(--blue-color);
+}
+
+.editBtn:hover {
+  background-color: var(--blue-color-2);
+}
+
+.deleteBtn {
+  background-color: var(--red-color-100);
+}
+
+.deleteBtn:hover {
+  background-color: var(--red-color-2);
+}

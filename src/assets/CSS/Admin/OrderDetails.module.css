@@ -1,0 +1,107 @@
+.orderDetails {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.orderInfo {
+  margin-bottom: 30px;
+  /* background-color: white; */
+  padding: 15px;
+  border-radius: 8px;
+  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.orderInfo p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: var(--gray-color-2);
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid var(--gray-color-3);
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.table th {
+  background-color: var(--gray-color-2);
+  color: var(--gray-color);
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:nth-child(odd) {
+  background-color: var(--gray-color);
+}
+
+.itemImage {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .table,
+  .table th,
+  .table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .itemImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orderDetails {
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .table,
+  .table th,
+  .table td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .itemImage {
+    width: 40px;
+    height: 40px;
+  }
+}

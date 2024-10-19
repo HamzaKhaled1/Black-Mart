@@ -1,0 +1,147 @@
+.ordertables {
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: auto; /* Ensures horizontal scrolling on smaller screens */
+}
+
+.ordertables table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--gray-color); /* Main background color */
+}
+
+.ordertables th,
+.ordertables td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Add some separation between rows */
+  color: var(--gray-color-2); /* Text color */
+}
+
+.ordertables th {
+  background-color: var(--gray-color-2);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ordertables tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background color */
+}
+
+.ordertables tr:hover {
+  background-color: #f1f1f1; /* Add hover effect */
+}
+
+.ordertables img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .ordertables table {
+    font-size: 0.875rem; /* Make text smaller for smaller screens */
+  }
+
+  .ordertables th,
+  .ordertables td {
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .ordertables img {
+    width: 40px;
+    height: 40px; /* Reduce image size on mobile */
+  }
+}
+
+.ShowButton {
+  background-color: var(--gray-color-3);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.ShowButton:hover {
+  background-color: var(--gray-color-2);
+}
+
+.current p {
+  background-color: var(--light-blue-color);
+  text-align: center;
+  color: black;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.current p:hover {
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.actions button {
+  width: 40%;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: background-color 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.unblock {
+  background-color: var(--green-color-60);
+}
+
+.unblock:hover {
+  background-color: var(--green-color-100);
+}
+
+.block {
+  background-color: var(--red-color-2);
+}
+
+.block:hover {
+  background-color: var(--red-color-hover);
+}
+
+.delete {
+  background-color: var(--red-color-2);
+}
+
+.delete:hover {
+  background-color: var(--red-color-hover);
+}
