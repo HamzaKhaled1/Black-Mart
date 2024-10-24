@@ -23,7 +23,7 @@ export default function ProductContainer({setdata}) {
     
     getProduct(); 
   }, [id]); 
-  
+  console.log(product)
   if (!product) {
     return <Loading />;
   }

@@ -52,6 +52,8 @@ export default function AddProductForm() {
     discount: "",
   });
   const [previewImage, setPreviewImage] = useState(null);
+  const [firstImage,setFirstImage]=useState(null)
+  const [secondImage,setSecondImage]=useState(null)
 
   useEffect(() => {
     const getCategories = async () => {
@@ -92,13 +94,23 @@ export default function AddProductForm() {
         ...product,
         [name]: values,
       });
-    } else if (name === "image1" || name === "image2") {
+    } else if (name === "image1" ) {
       const newImage = files[0];
       setProduct((product) => ({
         ...product,
         images: [...product.images, newImage],
       }));
-    } else {
+      setFirstImage(URL.createObjectURL(files[0]))
+    } 
+     else if ( name === "image2") {
+      const newImage = files[0];
+      setProduct((product) => ({
+        ...product,
+        images: [...product.images, newImage],
+      }));
+      setSecondImage(URL.createObjectURL(files[0]))
+    } 
+    else {
       setProduct({
         ...product,
         [name]: value,
@@ -106,10 +118,8 @@ export default function AddProductForm() {
     }
   };
 
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
-
+  console.log(previewImage)
+  console.log(firstImage)
   const validateForm = () => {
     let formIsValid = true;
     let validationErrors = {};
@@ -226,7 +236,10 @@ export default function AddProductForm() {
         }
 
         // Append multiple images
-        product.images.forEach((image) => formData.append("images", image));
+       product.images.forEach((image=>formData.append("images",image)));
+      
+
+        
 
         // Append colors and sizes
         product.color.forEach((color) => formData.append("color[]", color));
@@ -250,23 +263,23 @@ export default function AddProductForm() {
             });
 
             // Reset form after successful submission
-            setProduct({
-              name: "",
-              description: "",
-              price: "",
-              quantity: "",
-              brand: "",
-              imgCover: null,
-              images: [],
-              category: "",
-              subCategory: "",
-              color: [],
-              size: [],
-              style: "",
-              typeof: "",
-              discount: "",
-            });
-            setPreviewImage(null);
+            // setProduct({
+            //   name: "",
+            //   description: "",
+            //   price: "",
+            //   quantity: "",
+            //   brand: "",
+            //   imgCover: null,
+            //   images: [],
+            //   category: "",
+            //   subCategory: "",
+            //   color: [],
+            //   size: [],
+            //   style: "",
+            //   typeof: "",
+            //   discount: "",
+            // });
+            // setPreviewImage(null);
           }
         } catch (error) {
           // If an error occurs, use Swal to alert the user
@@ -280,23 +293,23 @@ export default function AddProductForm() {
             confirmButtonColor: "rgb(255, 198, 51)",
           }).then(() => {
             // Optionally reset the form in case of an error
-            setProduct({
-              name: "",
-              description: "",
-              price: "",
-              quantity: "",
-              brand: "",
-              imgCover: null,
-              images: [],
-              category: "",
-              subCategory: "",
-              color: [],
-              size: [],
-              style: "",
-              typeof: "",
-              discount: "",
-            });
-            setPreviewImage(null);
+            // setProduct({
+            //   name: "",
+            //   description: "",
+            //   price: "",
+            //   quantity: "",
+            //   brand: "",
+            //   imgCover: null,
+            //   images: [],
+            //   category: "",
+            //   subCategory: "",
+            //   color: [],
+            //   size: [],
+            //   style: "",
+            //   typeof: "",
+            //   discount: "",
+            // });
+            // setPreviewImage(null);
           });
 
           console.error("Error adding product:", error);
@@ -558,6 +571,15 @@ export default function AddProductForm() {
               />
             </label>
           </div>
+          {firstImage && (
+            <div className={style.previewImage}>
+              <img
+                src={firstImage}
+                alt="Image1 Preview"
+                className={style.imagePreview}
+              />
+            </div>
+          )}
 
           <div className={style.inputContainer}>
             <label className={style.customUpload} htmlFor="image2">
@@ -577,6 +599,15 @@ export default function AddProductForm() {
               />
             </label>
           </div>
+          {secondImage && (
+            <div className={style.previewImage}>
+              <img
+                src={secondImage}
+                alt="Image1 Preview"
+                className={style.imagePreview}
+              />
+            </div>
+          )}
           {errors.images && (
             <span className={style.error}>{errors.images}</span>
           )}

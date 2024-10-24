@@ -28,6 +28,7 @@ export default function ProductPage({
   setdata,
   subCategory
 }){
+console.log(sideimages)
   const navigate = useNavigate();
   const [Cart,setCart]=useState({})
   const [products, setProducts] = useState([]);
@@ -37,6 +38,7 @@ export default function ProductPage({
   const [counter, setcounter] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [img, setImage] = useState(image);
+  const [sideimagess,setSideImagess]=useState([]);
   const [selectedColor, setSelectedColor] = useState(null);
   const loginData = localStorage.getItem("loginData");
   const containerRef = useRef(null);
@@ -154,7 +156,10 @@ const ratechangeHandler=(e)=>{
     }
   };
   
- 
+ useEffect(()=>{
+  setImage(image)
+  setSideImagess(sideimages)
+ },[image])
   const handelimg = (e) => {
     setImage(e.target.src);
   };
@@ -173,7 +178,7 @@ const ratechangeHandler=(e)=>{
     
   };
 
-  
+
   useEffect(()=>{
     setCart({
       product:productId,
@@ -215,7 +220,7 @@ const ratechangeHandler=(e)=>{
             alt={name}
             className=" rounded-3xl min-w-80  w-[12rem] sm:w-[30rem] sm:h-[30rem] "
           />
-          {/* <div className="flex sm:flex-col  gap-10">
+          <div className="flex sm:flex-col  gap-10">
             <img
               src={image}
               alt="name"
@@ -225,7 +230,7 @@ const ratechangeHandler=(e)=>{
               }}
             />
             <img
-              src={sideimages[0]}
+              src={sideimagess[0]}
               alt="name"
               className="min-w-24  h-24 sm:w-40 sm:h-40 rounded-3xl cursor-pointer"
               onClick={(e) => {
@@ -233,14 +238,14 @@ const ratechangeHandler=(e)=>{
               }}
             />
             <img
-              src={sideimages[1]}
+              src={sideimagess[1]}
               alt="name"
               className="min-w-24  h-24 sm:w-40 sm:h-40 rounded-3xl cursor-pointer"
               onClick={(e) => {
                 handelimg(e);
               }}
             />
-          </div> */}
+          </div>
         </div>
         {/*title&desc part */}
         <div className="">

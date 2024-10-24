@@ -9,6 +9,5 @@ export const userCategories = async () => {
       token: `${getToken()}`,
     },
   });
-  console.log(response)
   return response.data.categories;
 };

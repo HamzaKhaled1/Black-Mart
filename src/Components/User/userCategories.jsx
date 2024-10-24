@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import CategoryCard from "./categoryCard";
-import { userCategories } from "../../Helper/Apis/Shared/Category/usercategories";
+import { userCategories } from "../../Helper/Apis/Shared/Category/userCategories";
 import Loading from "../Shared/Loaders/Loading";
 import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import Signupoffer from "../Shared/Signupoffer/Signupoffer";
+import image from "../../../../Back/uploads/1729367536566_Clothes.jpg"
 export default function UserCategoryContainer() {
   const [categories, setCategories] = useState([]);
 
@@ -18,10 +19,11 @@ export default function UserCategoryContainer() {
       }
     };
 
-    getCategories();  
+    getCategories();
   }, []); 
-
-
+  
+  console.log(categories)
+    
   return (
     <div >
         <Signupoffer/>

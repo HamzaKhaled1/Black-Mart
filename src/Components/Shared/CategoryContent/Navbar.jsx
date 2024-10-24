@@ -19,7 +19,7 @@ export default function Navbar({setGetFilters ,active,cat }) {
     const storedFilters = localStorage.getItem('filters');
     return storedFilters ? JSON.parse(storedFilters) : {
       type: "",
-      price: "$100 - $200",
+      price: "All Prices",
       color: "",
       size: "Large",
       style: ""

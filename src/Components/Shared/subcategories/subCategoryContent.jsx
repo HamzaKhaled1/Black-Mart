@@ -9,15 +9,12 @@ import { getSpecificSubCategory } from '../../../Helper/Apis/Shared/SubCategory/
 import { getSpecificCategory } from '../../../Helper/Apis/Shared/Category/getSpecificCategory';
 import ProductCard from '../Products/ProductCard';
 import Loading from '../Loaders/Loading'; 
-import OtherNavBar from "./OtherNavBar"
 export default function SubCategoryContent({Flag}) {
   const { id } = useParams();
   const [Category, setCategory] = useState(null);
   const [products, setProducts] = useState([]);
   const [active, setActive] = useState(false);
-  const [otherActive, setOtherActive] = useState(false);
   const [filters, setGetFilters] = useState({});
-  const [filters2, setGetFilters2] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -40,6 +37,7 @@ export default function SubCategoryContent({Flag}) {
     };
     fetchData();
   }, [id]);
+  console.log(products)
 useEffect(() => {
   const fetchData = async () => {
     try {
@@ -62,30 +60,41 @@ useEffect(() => {
   useEffect(() => {
     if (products.length > 0) {
       let filtered = [...products];
+      console.log(filtered)
       const localStorageFilters = JSON.parse(localStorage.getItem('filters')) || {};
       if (localStorageFilters.color) {
         filtered = filtered.filter(product => product.color.includes(localStorageFilters.color));
       }
+      console.log(filtered)
       if (localStorageFilters.price) {
         if (localStorageFilters.price === "All Prices") {
-          filtered = filtered
+          
+          filtered = filtered;
+        } else {
+          
+          const prices = localStorageFilters.price.replace(/\$/g, "").split(" - ").map(price => price.trim());
+          const low = Number(prices[0]);
+          const high = Number(prices[1]);
+      
+          console.log(low,high)
+          filtered.map((product)=>{
+            console.log(product.price)
+          })
+          filtered = filtered.filter(product => product.price >= low && product.price <= high);
         }
-        else{
-        const prices = localStorageFilters.price.replace(/\$/g, "").split(" - ").map(price => price.trim());
-        const low = Number(prices[0]);
-        const high = Number(prices[1]);
-        filtered = filtered.filter(product => product.price >= low && product.price <= high);
       }
-    }
+    console.log(filtered)
       if (localStorageFilters.type) {
         filtered = filtered.filter(product => product.typeof === localStorageFilters.type);
       }
       if(localStorageFilters.size){
         filtered = filtered.filter(product => product.size.includes(localStorageFilters.size))
+        
       }
       if(localStorageFilters.style) {
         filtered = filtered.filter(product => product.style === localStorageFilters.style);
       }
+      console.log(filtered)
       setFilteredProducts(filtered);
     }
   }, [products,filters]);
@@ -95,7 +104,7 @@ useEffect(() => {
   if (error) {
     return <div className="text-red-500 text-center">{error}</div>;
   }
-
+  console.log(filteredProducts)
   return (
     <> 
       <Signupoffer />

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getAllCategories } from "../../../Helper/Apis/Shared/Category/getAllCategories";
 import { getAllProducts } from "../../../Helper/Apis/Shared/Product/getAllProducts"; 
+import { BiSolidCategory } from "react-icons/bi";
 export default function Header({ setActive,setOtherActive,Flag }) {
   const [open, setOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -60,10 +61,10 @@ export default function Header({ setActive,setOtherActive,Flag }) {
         </Link>
       </div>
 
-      <div className=" felx mt-5   sm:mt-0 ">
+      <div className=" felx mt-5   sm:mt-0  ">
         
         <Link to={`/Categories`}>
-          <p className="text-md cursor-pointer">Categories</p>
+          <p className="text-Lg font-bold cursor-pointer flex items-center gap-1"> <BiSolidCategory className="text-lg" /> Categories</p>
         </Link>
         
         
